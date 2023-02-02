@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Pagination from './Pagination';
 import SingleClient from './SingleClient';
 
 const AllClients = () => {
@@ -21,7 +22,8 @@ const  currentRow = clients.slice(indexOfFirstRow, indexOfLastRow)
   return (
     <div>
       {clients.map((client, index) => 
-      <SingleClient client={currentRow}/>)}
+      <SingleClient client={client}/>)}
+      <Pagination rowPerPage={rowPerPage} totalRow={clients.length}/>
   
     </div>
   );
