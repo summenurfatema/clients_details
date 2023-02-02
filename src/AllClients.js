@@ -11,11 +11,17 @@ useEffect(()=>{
     .then(data=>setClients(data))
 },[clients])
 
+// pagination
+const [currentPage, setCurrentPage]=useState(1)
+const [rowPerPage, setRowPerPage] =useState(5)
+const indexOfLastRow = currentPage * rowPerPage;
+const indexOfFirstRow = indexOfLastRow - rowPerPage;
+const  currentRow = clients.slice(indexOfFirstRow, indexOfLastRow)
 
   return (
     <div>
       {clients.map((client, index) => 
-      <SingleClient client={client}/>)}
+      <SingleClient client={currentRow}/>)}
   
     </div>
   );
