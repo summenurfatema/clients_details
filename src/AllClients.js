@@ -5,7 +5,7 @@ const AllClients = () => {
  const [clients,setClients] =useState([])
 //   const [visibility, setVisibility] = useState({});
 //   const ck = index => {
-//     setVisibility({
+//     setVisy({
 //       lity,
 //       [index]: !visibility[index]
 //     });
