@@ -4,10 +4,7 @@ import SingleClient from './SingleClient';
 const AllClients = () => {
  const [clients,setClients] =useState([])
 //   const [visibility, setVisibility] = useState({});
-//   const ck = index => {
-//    
-//      
-//       [index]: !visibility[index]
+/: !visibility[index]
 //     });
   //};
 useEffect(()=>{
