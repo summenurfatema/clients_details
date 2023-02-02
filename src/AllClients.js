@@ -4,9 +4,7 @@ import SingleClient from './SingleClient';
 const AllClients = () => {
  const [clients,setClients] =useState([])
 //   const [visibility, setVisibility] = useState({});
-/:[index]
-//     });
-  //};
+
 useEffect(()=>{
     fetch('https://jsonplaceholder.typicode.com/users')
     .then(res=>res.json())
