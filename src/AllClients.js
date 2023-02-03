@@ -4,26 +4,29 @@ import SingleClient from './SingleClient';
 
 const AllClients = () => {
  const [clients,setClients] =useState([])
-
+ 
+//  pagination
+ const [currentPage, setCurrentPage]=useState(1)
+ const [rowPerPage, setRowPerPage] =useState(3)
 
 useEffect(()=>{
     fetch('https://jsonplaceholder.typicode.com/users')
-    .then(res=>res.json())
+    .then(res=>res.json())          
     .then(data=>setClients(data))
-},[clients])
+},[])
 
 // pagination
-const [currentPage, setCurrentPage]=useState(1)
-const [rowPerPage, setRowPerPage] =useState(5)
+
 const indexOfLastRow = currentPage * rowPerPage;
 const indexOfFirstRow = indexOfLastRow - rowPerPage;
-const  currentRow = clients.slice(indexOfFirstRow, indexOfLastRow)
+const currentRow = clients.slice(indexOfFirstRow, indexOfLastRow)
+const paginate =pageNumber=>setCurrentPage(pageNumber)
 
   return (
-    <div>
-      {clients.map((client, index) => 
+    <div className='flex flex-col justify-center pt-24'>
+      {currentRow.map((client, index) => 
       <SingleClient client={client}/>)}
-      <Pagination rowPerPage={rowPerPage} totalRow={clients.length}/>
+      <Pagination rowPerPage={rowPerPage} paginate={paginate} currentPage={currentPage} totalRow={clients.length}/>
   
     </div>
   );

@@ -6,8 +6,8 @@ const [visible, setVisible] = useState(false)
 
 
   return (
-    <div className="font-serif">
-      <table className="table w-full border text-2xl text-center">
+    <div className="font-serif mx-10">
+      <table className="table w-full border text-2xl">
         <thead className="hidden my-5">
           <tr>
             <th>name</th>
@@ -44,7 +44,7 @@ const [visible, setVisible] = useState(false)
         </tbody>
       </table>
       {visible && 
-      <div className="flex justify-start space-x-24 pl-10 py-16 text-2xl">
+      <div className="flex justify-start space-x-24 border px-5 py-16 text-2xl">
 
         <div className="space-y-10">
          <div className="space-y-3">
