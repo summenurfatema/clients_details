@@ -13,9 +13,9 @@ const Pagination = ({rowPerPage, totalRow,paginate,currentPage }) => {
                 {
                     pageNumber.map(number =>(
                         <li key={number} onClick={()=>paginate(number)} className={`border px-6 py-4 rounded-md bg-[#40C463] ${number=== currentPage && 'text-[#40C463] bg-white border-4 border-[#40C463] ' }`}>
-                            <a href='!#'>
+                           
                                 {number}
-                            </a>
+                           
                         </li>
                     ))
                 }
